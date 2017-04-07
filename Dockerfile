@@ -21,8 +21,7 @@ RUN npm install
 COPY . /usr/src/app
 
 # Expose ports.
-#   - 1447: Clearhaus App
-EXPOSE 1447
+EXPOSE $PORT
 
 #Run the app
 CMD [ "npm", "start" ]
