@@ -19,6 +19,10 @@ _connectMongoDB()
 //Routes
 _routes()
 
+app.get('/', function(req,res,next) { 
+    return res.status(200).send("Clearhaus App runing on PORT:"+util.getPort())     
+})  
+
 app.set('port', util.getPort())
 var server = app.listen(app.get('port'), function() {
 	console.log("Clearhaus App runing on PORT:"+app.get('port'))
