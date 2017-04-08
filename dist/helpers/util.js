@@ -1,13 +1,17 @@
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
 exports._isJSON = exports.validateEmail = exports.hasWhiteSpace = exports.getConfigKeys = exports.getPort = exports.isProduction = undefined;
 
-var _keys = require("../config/keys");
+var _keys = require('../config/keys');
 
 var _keys2 = _interopRequireDefault(_keys);
+
+var _underscore = require('underscore');
+
+var _underscore2 = _interopRequireDefault(_underscore);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -47,6 +51,7 @@ var validateEmail = exports.validateEmail = function validateEmail(email) {
 };
 
 var _isJSON = exports._isJSON = function _isJSON(json) {
+
     //String
     if (json && typeof json === "string") {
         try {
@@ -55,6 +60,8 @@ var _isJSON = exports._isJSON = function _isJSON(json) {
         } catch (e) {
             return false;
         }
+    } else {
+        return _underscore2.default.isObject(json);
     }
 
     return false;

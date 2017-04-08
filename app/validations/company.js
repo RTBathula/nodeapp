@@ -4,7 +4,7 @@ export const createNew = (req, res, next) => {
 	let newCompanyObj = req.body || null
     let response = {
     	status: "error"
-    }
+    }   
 
     //Validate
     if(!newCompanyObj || Object.prototype.toString.call(newCompanyObj)=="[object Null]"){

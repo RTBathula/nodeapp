@@ -1,4 +1,5 @@
 import keys from '../config/keys'
+import _ from'underscore'
 
 export const isProduction = () => {
     if(process.env.PORT){
@@ -35,15 +36,19 @@ export const validateEmail = (email) => {
 }
 
 export const _isJSON = (json) => {
-    //String
-    if (json && typeof(json) === "string") {
-        try {
-            JSON.parse(json);
-            return true
-        } catch (e) {
-            return false
-        }
-    } 
 
-    return false;
+    //String
+      if(json && typeof(json)==="string"){
+        try{
+          JSON.parse(json);
+          return true;
+        }catch(e){
+          return false;
+        }
+
+      }else{
+        return _.isObject(json);
+      }
+        
+      return false;
 }

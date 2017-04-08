@@ -56,7 +56,7 @@ var companyService = {
             } else {
               response.status = "success";
               response.message = "Successfully created a company";
-              response.data = "your company id:" + newCompanyObj._id.toHexString();
+              response.data = newCompanyObj;
               deferred.resolve(response);
             }
           });
