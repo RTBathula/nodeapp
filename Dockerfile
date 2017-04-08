@@ -1,13 +1,8 @@
-#
-# Clearhaus App Dockerfile
-#
-
-# Pull base image nodejs image.
-FROM node:boron
+#Grab the latest alpine image
+FROM node:6
 
 #Maintainer.
 MAINTAINER RT Bathula <battu.network@gmail.com>
-
 
 RUN mkdir -p /usr/src/app
 
@@ -20,8 +15,10 @@ RUN npm install
 # Bundle app source
 COPY . /usr/src/app
 
-# Expose ports.
-EXPOSE $PORT
+# Expose is NOT supported by Heroku
+EXPOSE 1447	
 
 #Run the app
-CMD [ "npm", "start" ]
+CMD ["npm", "start"]
+
+
