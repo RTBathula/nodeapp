@@ -5,10 +5,10 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "npm run build",
+    "dev": "npm run build && node bin/dev",
     "clean": "rm -rf dist",
     "build": "npm run clean && mkdir dist && babel app -s -d dist",
-    "start": "npm run build && node bin/production"
+    "start": "node bin/production"
   },
   "keywords": [
     "test"
