@@ -252,7 +252,7 @@ var companyService = {
 
             response.status = "success";
             response.message = "Successfully added the new beneficial";
-            response.data = resp.value;
+            response.data = addBeneficialObj;
             deferred.resolve(response);
           });
         }
