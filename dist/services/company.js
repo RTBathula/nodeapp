@@ -159,6 +159,7 @@ var companyService = {
       var collection = global.mongoCon.collection("company");
 
       var updateObj = {};
+      updateObj.updatedAt = new Date().getTime();
       if (updateCompanyObj.country) {
         updateObj.address = updateCompanyObj.address;
       }
@@ -231,6 +232,10 @@ var companyService = {
         }
         if (!respDoc) {
 
+          var updateObj = {
+            updatedAt: new Date().getTime()
+          };
+
           var pushObj = {
             beneficials: {
               name: addBeneficialObj.name,
@@ -238,7 +243,7 @@ var companyService = {
             }
           };
 
-          collection.findOneAndUpdate({ _id: new _mongodb2.default.ObjectId(companyId) }, { $push: pushObj }, { returnOriginal: false }, function (err, resp) {
+          collection.findOneAndUpdate({ _id: new _mongodb2.default.ObjectId(companyId) }, { $set: updateObj, $push: pushObj }, { returnOriginal: false }, function (err, resp) {
             if (err) {
               response.status = "error";
               response.message = "Unable to add the beneficial with given company id and beneficial object.";
