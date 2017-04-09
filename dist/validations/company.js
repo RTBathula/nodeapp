@@ -16,7 +16,6 @@ var createNew = exports.createNew = function createNew(req, res, next) {
     var response = {
         status: "error"
     };
-    console.log(newCompanyObj);
 
     //Validate
     if (!newCompanyObj || Object.prototype.toString.call(newCompanyObj) == "[object Null]") {
