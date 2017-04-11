@@ -1,46 +1,33 @@
-# Event Calender
-Find and RSVP the events around the world
+# Nodejs company api
+Clearhaus test project
 
-#Demo
-http://calender-event.herokuapp.com
+#Journey
+First time I did the way project demands, it is interesting. like connecting to AWS and creating instance.
+Although I am able to create instance but not able to create user as the SDK of Net:SSH have issues.
+But If you see my coding style and code, you will get to know the way I write.
+I strongly believe this "Any fool can write code that a computer can understand. Good programmers write code that humans can understand" -Martin Fowler. .
+I used: AWS SDK, Net:SSH SDK for this project.
+
+
 
 #Getting Started
 
 Fork and clone the repository. Install dependencies with:
 
-``npm install``
-
-and
-
-``bower install``
-
-#Database connection
-Run MongoDB locally or run through service and add MongoDB connection string config/keys.js file
-
-Example: under config/keys.js
-```
-{
-  //Local connection
-  mongoConnectionString: "mongodb://localhost:27017"
-}
-```
+``bundle install``
 
 
 #Run Server
-After completing all above steps run your node.js server
+After completing all above steps run your rails server
 
-``node server``
+``rails s``
 
-#Admin
-To add events,Log in as admin with
+##REST routes for create AWS Instance
+POST->http://localhost:3000/amazonec2/get_ec2instance
+###Params
+username
+password
 
-**username**: admin </br>
-**password**:secretpassword
-
-URL: &lt;domain&gt;/#/login
-
-Hosted URL: http://calender-event.herokuapp.com/#/login
-
-#LICENSE
-
-Copyright 2016
+##Love :heart: to hear feedback from you
+RT Bathula-weirdo,coffee lover
+battu.network@gmail.com
