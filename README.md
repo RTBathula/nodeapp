@@ -9,7 +9,7 @@ Enabled ES6 usage with babel support. Created a separate folder especially for v
 Example of success result ``{ status:"success",message:"successfully fetched",data: {} }``
 Example of error result ``{status:"error",message:"id param is required"}``
 
-Finally Same project is done using golang making same standards
+Finally Same project is done using golang maintaining same standards
 https://github.com/RTBathula/golangapp
 
 
