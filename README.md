@@ -68,7 +68,7 @@ curl -X POST -H "Accept: application/json" -H "Content-Type: application/json" -
 {
   "status"  : "success",
   "message" : "Successfully created a company" ,
-  "data"    : {---created company object---}
+  "data"    : {created company object}
 }
 ```
 
@@ -82,8 +82,8 @@ city              | string      | company city
 country              | string      | company country
 email(optional)   | string      | company email
 phone(optional)              | string      | company phone
-directors              | json array      | company directors. see below
-beneficials              | json array      | comapny beneficials. see below
+directors              | json array      | company directors. see below for params
+beneficials              | json array      | comapny beneficials. see below for params
 
 ### Directors and Beneficials Parameters
 
