@@ -24,8 +24,10 @@ Example: under app/config/keys.js
 
 #Build ES6 with babel and and Run Server
 After completing all above steps run your node.js server
-``npm run dev``
-``npm start``
+```
+npm run dev
+npm start
+```
 
 #LICENSE
 
