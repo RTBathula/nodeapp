@@ -93,7 +93,79 @@ name              | string      |  name
 email  | string      | email
 
 
+## Get company details GET -> http://localhost:1447/company/{companyid}
 
+> Example CURL Request:
+
+```
+curl -X GET  http://localhost:1447/company/{companyid}
+```
+
+> Result:
+
+```json
+{
+  "status"  : "success",
+  "message" : "Successfully fetched the company details" ,
+  "data"    : {company object}
+}
+```
+
+## Get company list GET -> http://localhost:1447/company?skip=0&limit=3
+
+> Example CURL Request:
+
+```
+curl -X GET  http://localhost:1447/company
+```
+
+> Result:
+
+```json
+{
+  "status"  : "success",
+  "message" : "Successfully fetched the company list" ,
+  "data"    : [{company object}]
+}
+```
+### Optional skip and limit query params
+
+Parameter                   | Type        | Description
+--------------------------- | ----------- | -------------------------------
+skip              | integer      |  0
+limit  | integer      | 2
+
+## Create company POST -> http://localhost:1447/company
+
+> Example CURL Request:
+
+```
+curl -X POST -H "Accept: application/json" -H "Content-Type: application/json" -d '{"name":"starbucks","address":"costanera center","city":"santiago","country":"chile","email":"rtbathula@sbucks.com","phone":"123456789","directors":[{"name":"rtbathula","email":"director1@sbucks.com"}],"beneficials":[{"name":"hello","email":"beneficial1@sbucks.com"}]}' http://localhost:1447/company
+
+```
+
+> Result:
+
+```json
+{
+  "status"  : "success",
+  "message" : "Successfully created a company" ,
+  "data"    : {created company object}
+}
+```
+
+### Parameters
+
+Parameter                   | Type        | Description
+--------------------------- | ----------- | -------------------------------
+name              | string      | company name
+address              | string      | company address
+city              | string      | company city
+country              | string      | company country
+email(optional)   | string      | company email
+phone(optional)              | string      | company phone
+directors              | json array      | company directors. see below for params
+beneficials              | json array      | comapny beneficials. see below for params
 
 
 ## Love :heart: to hear feedback from you
