@@ -53,19 +53,18 @@ heroku ps:scale web=1
 For more info, look here https://devcenter.heroku.com/articles/container-registry-and-runtime
 
 # API End points and usage
-## Enterprise Register
-Enterprise Register API. Alternatively you can also register from 
-[Enterprise todova platform](http://enterprise.todova.cl/register). Once registered with todova, a verfication email is 
-sent to creator's email. On successfully email confirmation, the creator will recieve his/her accountId,apikey,roleKey 
-to email to secure calls to rest API end point. NOTE: By deafault Creator role is added as "pricipal" where creator is 
-allowed to make any calls without any restriction.
-
-> Request:
+## Create company POST -> http://localhost:1447/company
 
 ```json
 POST -> /enterprise/register 
 ```
 
+> Example CURL Request:
+
+```
+curl -X POST -H "Accept: application/json" -H "Content-Type: application/json" -d '{"name":"xyz2","address":"xyz","city":"xyz","country":"xyz","email":"xyz@gmail.com","phone":"123456789","directors":[{"name":"hello","email":"ghk@gmail.com"}],"beneficials":[{"name":"hello","email":"ghk@gmail.com"}]}' http://localhost:1447/company
+
+```
 
 > Result:
 
@@ -76,16 +75,6 @@ POST -> /enterprise/register
 }
 ```
 
-### HTTP Request
-
-`POST http://localhost:1447/company`
-
-Example curl request
-
-```
-curl -X POST -H "Accept: application/json" -H "Content-Type: application/json" -d '{"name":"xyz2","address":"xyz","city":"xyz","country":"xyz","email":"xyz@gmail.com","phone":"123456789","directors":[{"name":"hello","email":"ghk@gmail.com"}],"beneficials":[{"name":"hello","email":"ghk@gmail.com"}]}' http://localhost:1447/company
-
-```
 ### Parameters
 
 Parameter                   | Type        | Description
