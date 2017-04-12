@@ -53,8 +53,74 @@ heroku ps:scale web=1
 For more info, look here https://devcenter.heroku.com/articles/container-registry-and-runtime
 
 # API End points and usage
-## Create company
-### POST -> http://localhost:1447/company
+## Enterprise Register
+Enterprise Register API. Alternatively you can also register from 
+[Enterprise todova platform](http://enterprise.todova.cl/register). Once registered with todova, a verfication email is 
+sent to creator's email. On successfully email confirmation, the creator will recieve his/her accountId,apikey,roleKey 
+to email to secure calls to rest API end point. NOTE: By deafault Creator role is added as "pricipal" where creator is 
+allowed to make any calls without any restriction.
+
+> Request:
+
+```json
+POST -> /enterprise/register 
+```
+
+```json
+{
+    "companyName"                : "todova",
+    "companyRut"                 : "25.173.454-1",
+    "companyPhone"               : "+56987654321",
+    "companyDirection"           : "sancho de la hoz, santiago, chile",
+    "companyLocationCoordinates" :  [-33.404928,-70.599794],
+    "companyWebsite"             :  "http://your-web-enterprise.cl",
+    "companyGiro"                : "your-giro",
+    "companyRubro"               : "your-rubro",
+    "companyRepresentative"      : "Carla",
+
+    "creatorEmail"     : "carla@todova.cl",
+    "creatorRut"       : "25.164.544-1",
+    "creatorPhone"     : "+56987654321",
+    "creatorFirstName" : "Carla",
+    "creatorLastName"  : "Rodrigo",
+    "creatorPassword"  : "some-secret-password"
+}
+```
+
+> Result:
+
+```json
+{
+  "status"  : "success",
+  "message" : "Successfully registered with todova.Please confirm your email"  
+}
+```
+
+### HTTP Request
+
+`POST /enterprise/register`
+
+### Parameters(* indicates fields are required)
+
+Parameter                   | Type        | Description
+--------------------------- | ----------- | -------------------------------
+companyName*                | string      | Registered company name
+companyRut*                 | string      | Company's chilean RUT
+companyPhone*               | string      | Company's phone with +56
+companyDirection*           | string      | Comapany location address
+companyLocationCoordinates* | coordinates | Company location [Lat, Lng]
+companyWebsite*             | string      | Company Website with http://
+companyGiro*                | string      | Company Giro
+companyRubro*               | string      | Company Rubro
+companyRepresentative*      | string      | Representative of the company
+creatorEmail*               | email       | Creator email
+creatorRut*                 | string      | Creator chilean RUT
+creatorPhone*               | string      | Creator phone with +56
+creatorFirstName*           | string      | Creator first name
+creatorLastName*            | string      | Creator last name
+creatorPassword*            | string      | Creator 6 alphanumeric password
+
+
 ```
 curl -X POST -H "Accept: application/json" -H "Content-Type: application/json" -d '{"name":"xyz2","address":"xyz","city":"xyz","country":"xyz","email":"xyz@gmail.com","phone":"123456789","directors":[{"name":"hello","email":"ghk@gmail.com"}],"beneficials":[{"name":"hello","email":"ghk@gmail.com"}]}' http://localhost:1447/company
 
