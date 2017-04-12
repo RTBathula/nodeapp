@@ -66,26 +66,6 @@ allowed to make any calls without any restriction.
 POST -> /enterprise/register 
 ```
 
-```json
-{
-    "companyName"                : "todova",
-    "companyRut"                 : "25.173.454-1",
-    "companyPhone"               : "+56987654321",
-    "companyDirection"           : "sancho de la hoz, santiago, chile",
-    "companyLocationCoordinates" :  [-33.404928,-70.599794],
-    "companyWebsite"             :  "http://your-web-enterprise.cl",
-    "companyGiro"                : "your-giro",
-    "companyRubro"               : "your-rubro",
-    "companyRepresentative"      : "Carla",
-
-    "creatorEmail"     : "carla@todova.cl",
-    "creatorRut"       : "25.164.544-1",
-    "creatorPhone"     : "+56987654321",
-    "creatorFirstName" : "Carla",
-    "creatorLastName"  : "Rodrigo",
-    "creatorPassword"  : "some-secret-password"
-}
-```
 
 > Result:
 
@@ -98,33 +78,24 @@ POST -> /enterprise/register
 
 ### HTTP Request
 
-`POST /enterprise/register`
+`POST http://localhost:1447/company`
 
-### Parameters(* indicates fields are required)
-
-Parameter                   | Type        | Description
---------------------------- | ----------- | -------------------------------
-companyName*                | string      | Registered company name
-companyRut*                 | string      | Company's chilean RUT
-companyPhone*               | string      | Company's phone with +56
-companyDirection*           | string      | Comapany location address
-companyLocationCoordinates* | coordinates | Company location [Lat, Lng]
-companyWebsite*             | string      | Company Website with http://
-companyGiro*                | string      | Company Giro
-companyRubro*               | string      | Company Rubro
-companyRepresentative*      | string      | Representative of the company
-creatorEmail*               | email       | Creator email
-creatorRut*                 | string      | Creator chilean RUT
-creatorPhone*               | string      | Creator phone with +56
-creatorFirstName*           | string      | Creator first name
-creatorLastName*            | string      | Creator last name
-creatorPassword*            | string      | Creator 6 alphanumeric password
-
+Example curl request
 
 ```
 curl -X POST -H "Accept: application/json" -H "Content-Type: application/json" -d '{"name":"xyz2","address":"xyz","city":"xyz","country":"xyz","email":"xyz@gmail.com","phone":"123456789","directors":[{"name":"hello","email":"ghk@gmail.com"}],"beneficials":[{"name":"hello","email":"ghk@gmail.com"}]}' http://localhost:1447/company
 
 ```
+### Parameters
+
+Parameter                   | Type        | Description
+--------------------------- | ----------- | -------------------------------
+name              | string      | company name
+address              | string      | company address
+address              | string      | company address
+
+
+
 
 ## Love :heart: to hear feedback from you
 RT Bathula-weirdo,coffee lover
