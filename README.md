@@ -58,7 +58,7 @@ For more info, look here https://devcenter.heroku.com/articles/container-registr
 > Example CURL Request:
 
 ```
-curl -X POST -H "Accept: application/json" -H "Content-Type: application/json" -d '{"name":"xyz2","address":"xyz","city":"xyz","country":"xyz","email":"xyz@gmail.com","phone":"123456789","directors":[{"name":"hello","email":"ghk@gmail.com"}],"beneficials":[{"name":"hello","email":"ghk@gmail.com"}]}' http://localhost:1447/company
+curl -X POST -H "Accept: application/json" -H "Content-Type: application/json" -d '{"name":"starbucks","address":"costanera center","city":"santiago","country":"chile","email":"rtbathula@sbucks.com","phone":"123456789","directors":[{"name":"rtbathula","email":"director1@sbucks.com"}],"beneficials":[{"name":"hello","email":"beneficial1@sbucks.com"}]}' http://localhost:1447/company
 
 ```
 
@@ -67,7 +67,8 @@ curl -X POST -H "Accept: application/json" -H "Content-Type: application/json" -
 ```json
 {
   "status"  : "success",
-  "message" : "Successfully registered with todova.Please confirm your email"  
+  "message" : "Successfully created a company" ,
+  "data"    : {---created company object---}
 }
 ```
 
@@ -77,7 +78,20 @@ Parameter                   | Type        | Description
 --------------------------- | ----------- | -------------------------------
 name              | string      | company name
 address              | string      | company address
-address              | string      | company address
+city              | string      | company city
+country              | string      | company country
+email(optional)   | string      | company email
+phone(optional)              | string      | company phone
+directors              | json array      | company directors. see below
+beneficials              | json array      | comapny beneficials. see below
+
+### Directors and Beneficials Parameters
+
+Parameter                   | Type        | Description
+--------------------------- | ----------- | -------------------------------
+name              | string      |  name
+email  | string      | email
+
 
 
 
