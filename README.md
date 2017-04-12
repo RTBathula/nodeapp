@@ -53,6 +53,8 @@ heroku ps:scale web=1
 For more info, look here https://devcenter.heroku.com/articles/container-registry-and-runtime
 
 # API End points and usage
+## Create company
+### POST -> http://localhost:1447/company
 ```
 curl -X POST -H "Accept: application/json" -H "Content-Type: application/json" -d '{"name":"xyz2","address":"xyz","city":"xyz","country":"xyz","email":"xyz@gmail.com","phone":"123456789","directors":[{"name":"hello","email":"ghk@gmail.com"}],"beneficials":[{"name":"hello","email":"ghk@gmail.com"}]}' http://localhost:1447/company
 
