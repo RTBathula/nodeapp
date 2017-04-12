@@ -1,16 +1,23 @@
 # Nodejs company api
 Clearhaus test project
 
-#Hosted URL
+# Hosted URL
 http://nodecompanyapi.herokuapp.com
 
-#Getting Started
+# Trivia
+Enabled ES6 usage with babel support. Created a separate folder especially for validations. Validations are done for every end point via middleware style. All the API calls respond in same style, giving consistency and symmetry to response either errors or success responses. 
+Example of success result ``{ status:"success",message:"successfully fetched",data: {} }``
+Example of error result ``{status:"error",message:"id param is required"}``
+
+
+
+# Getting Started
 
 Fork and clone the repository. Install dependencies with:
 
 ``npm install``
 
-#Database connection
+# Database connection
 Run MongoDB locally or run through service and add MongoDB connection string app/config/keys.js file
 
 Example: under app/config/keys.js
@@ -22,13 +29,14 @@ Example: under app/config/keys.js
 }
 ```
 
-#Build ES6 with babel and and Run Server
+# Build ES6 with babel and and Run Server
 After completing all above steps run your node.js server
 ```
 npm run dev
 npm start
 ```
 
-#LICENSE
+## Love :heart: to hear feedback from you
+RT Bathula-weirdo,coffee lover
+battu.network@gmail.com
 
-Copyright 2016
