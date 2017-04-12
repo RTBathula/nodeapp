@@ -135,12 +135,12 @@ Parameter                   | Type        | Description
 skip              | integer      |  0
 limit  | integer      | 2
 
-## Create company POST -> http://localhost:1447/company
+## Update company PUT -> http://localhost:1447/company/{companyid}/update-company
 
 > Example CURL Request:
 
 ```
-curl -X POST -H "Accept: application/json" -H "Content-Type: application/json" -d '{"name":"starbucks","address":"costanera center","city":"santiago","country":"chile","email":"rtbathula@sbucks.com","phone":"123456789","directors":[{"name":"rtbathula","email":"director1@sbucks.com"}],"beneficials":[{"name":"hello","email":"beneficial1@sbucks.com"}]}' http://localhost:1447/company
+curl -X PUT -H "Accept: application/json" -H "Content-Type: application/json" -d '{"address":"hyderabad","city":"hyderabad","country":"india","email":"new@gmail.com","phone":"123456789"}' http://localhost:1447/company/{companyid}/update-company
 
 ```
 
@@ -149,8 +149,38 @@ curl -X POST -H "Accept: application/json" -H "Content-Type: application/json" -
 ```json
 {
   "status"  : "success",
-  "message" : "Successfully created a company" ,
-  "data"    : {created company object}
+  "message" : "Successfully update the company" ,
+  "data"    : {updated company object}
+}
+```
+
+### Parameters(any one of them is need to update company)
+
+Parameter                   | Type        | Description
+--------------------------- | ----------- | -------------------------------
+address              | string      | company address
+city              | string      | company city
+country              | string      | company country
+email  | string      | company email
+phone              | string      | company phone
+
+
+## Add beneficial PUT -> http://localhost:1447/company/{companyid}/add-beneficial
+
+> Example CURL Request:
+
+```
+curl -X PUT -H "Accept: application/json" -H "Content-Type: application/json" -d '{"name":"beneficial name","email":"beneficial@sbucks.com"}' http://localhost:1447/company/{companyid}/add-beneficial
+
+```
+
+> Result:
+
+```json
+{
+  "status"  : "success",
+  "message" : "Successfully added the new beneficial" ,
+  "data"    : {added beneficial object}
 }
 ```
 
@@ -158,14 +188,9 @@ curl -X POST -H "Accept: application/json" -H "Content-Type: application/json" -
 
 Parameter                   | Type        | Description
 --------------------------- | ----------- | -------------------------------
-name              | string      | company name
-address              | string      | company address
-city              | string      | company city
-country              | string      | company country
-email(optional)   | string      | company email
-phone(optional)              | string      | company phone
-directors              | json array      | company directors. see below for params
-beneficials              | json array      | comapny beneficials. see below for params
+name              | string      | beneficial address
+email  | string      | company email
+
 
 
 ## Love :heart: to hear feedback from you
