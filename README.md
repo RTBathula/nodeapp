@@ -55,10 +55,6 @@ For more info, look here https://devcenter.heroku.com/articles/container-registr
 # API End points and usage
 ## Create company POST -> http://localhost:1447/company
 
-```json
-POST -> /enterprise/register 
-```
-
 > Example CURL Request:
 
 ```
